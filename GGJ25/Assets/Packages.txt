@@ -1,0 +1,18 @@
+
+Scripts/UIAnimationsAndEvents
+	//Includes scripts for various UI script animations as well as UnityEvents that are triggered on OnEnable / OnDisable
+
+Scripts/Sound
+	//A system to play UI sounds or music from any script
+
+Scripts/Camera
+	//Handy Screenshake
+
+Editor/SupersSmolEditorScripts
+
+	Sprite Importer 
+		//Handy if I want to import sprites a certain way, changes default import.
+
+	Editor Hotkeys 
+		//Lets me Ctrl+alt+S to quickly apply changes to prefabs
+
