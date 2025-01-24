@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     public bool inSafeZone = false;
 
-    [SerializeField]
+    // [SerializeField]
     private ParticleSystem system;
 
     private float maxEmission;
@@ -25,21 +25,25 @@ public class PlayerHealth : MonoBehaviour
 
     public FixableObjectCurve lastCurve;
 
+    [SerializeField] OstManager ostManager;
+    [SerializeField] SfxManager sfxManager;
+
     void Start()
     {
         maxEmission = system.emission.rateOverTime.constantMax;
-
     }
 
     void Update()
     {
         if(inSafeZone)
         {
+            ostManager.SetOst(OstManager.OSTS.happy);
             lifeTimer = Mathf.Clamp(lifeTimer - Time.deltaTime * lifeTimer / healLength, 0f, lifeLength);
             UpdateParticles();
         }
         else
         {
+            ostManager.SetOst(OstManager.OSTS.sad);
             lifeTimer = Mathf.Clamp(lifeTimer + Time.deltaTime, 0f, lifeLength);
             UpdateParticles();
             if(lifeTimer >= lifeLength)

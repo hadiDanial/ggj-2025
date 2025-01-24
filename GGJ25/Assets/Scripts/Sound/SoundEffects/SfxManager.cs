@@ -65,6 +65,10 @@ public class SfxManager : MonoBehaviour
     }
 
     public void PlaySound(SFX index, bool loop=false){
+        if(index == SFX.fix) {
+            Debug.Log("no fix sfx yet");
+            return;
+        }
         sources[(int)index].loop = loop;
         sources[(int)index].clip = getRandomClip(index);
         sources[(int)index].Play();
