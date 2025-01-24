@@ -50,3 +50,6 @@ TagManager:
   - name: Fixed Objects
     uniqueID: 806668649
     locked: 0
+  - name: Player
+    uniqueID: 2725639845
+    locked: 0
