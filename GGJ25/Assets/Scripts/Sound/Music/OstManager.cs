@@ -16,6 +16,7 @@ public class OstManager : MonoBehaviour
     [SerializeField] float rainMaxVolDis = 4;
     [SerializeField] float rainMinVolDis = 20f;
     [SerializeField] float maxRainVol = 0.6f;
+    [SerializeField] float happyVolWhileHealing = 0.7f;
     
     private AudioSource[] sources = new AudioSource[5];
 
@@ -67,6 +68,7 @@ public class OstManager : MonoBehaviour
     }
     public void SetHealing(bool active){
         volumesDest[(int)OSTS.heal] = active ? 1 : 0;
+        volumesDest[(int)OSTS.happy] = active ? happyVolWhileHealing : 1f;
     }
     public void SetHappy(){SetOst(OSTS.happy);}
     public void SetSad(){SetOst(OSTS.sad);}
