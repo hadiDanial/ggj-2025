@@ -23,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
 
     public float healLength = 1f;
 
+    public FixableObjectCurve lastCurve;
+
     void Start()
     {
         maxEmission = system.emission.rateOverTime.constantMax;
@@ -52,6 +54,11 @@ public class PlayerHealth : MonoBehaviour
         //Pop animation? 
         //Respawn
         transform.position = lastSafeZone.position;
+
+        if(lastCurve != null)
+        {
+            lastCurve.OnTriggerExit2D(GetComponent<Collider2D>());
+        }
     }
 
 
