@@ -57,7 +57,7 @@ public class OstManager : MonoBehaviour
         sources[(int)OSTS.heal].volume  = approach(sources[(int)OSTS.heal].volume, volumesDest[(int)OSTS.heal]*(1-rainMult), switchSpd);
 
         sources[(int)OSTS.rain].volume = approach(sources[(int)OSTS.rain].volume, volumesDest[(int)OSTS.rain], switchSpd);
-        Debug.Log(sources[0].volume + ", " + sources[1].volume + ", " + sources[2].volume + ", " + sources[3].volume + ", rainmult: " + rainMult);
+        // Debug.Log(sources[0].volume + ", " + sources[1].volume + ", " + sources[2].volume + ", " + sources[3].volume + ", rainmult: " + rainMult);
     }
     
     //public methods
