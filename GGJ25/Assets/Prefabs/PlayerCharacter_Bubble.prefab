@@ -5020,6 +5020,7 @@ MonoBehaviour:
   lastSafeZone: {fileID: 0}
   playerSpriteDisappear: {fileID: 8106045312990647210}
   healLength: 1
+  lastCurve: {fileID: 0}
 --- !u!95 &7735660004095020409
 Animator:
   serializedVersion: 5
@@ -5157,7 +5158,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5328,7 +5329,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5911,7 +5912,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2

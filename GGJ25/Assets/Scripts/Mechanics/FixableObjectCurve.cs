@@ -27,6 +27,8 @@ public class FixableObjectCurve : Cleanable
     [SerializeField]
     private AnimationCurve tranCurve;
 
+    
+
     void Start()
     {
         collider2D = GetComponent<Collider2D>();
@@ -51,11 +53,14 @@ public class FixableObjectCurve : Cleanable
             timerCor = DoTimerIncrease();
             fixing = true;
             StartCoroutine(timerCor);
-
+        }
+        if(other.TryGetComponent<PlayerHealth>(out PlayerHealth hp))
+        {
+            hp.lastCurve = this;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    public void OnTriggerExit2D(Collider2D other)
     {
         if(IsClean) return;
         if(other.TryGetComponent<Controller2D>(out Controller2D controller))
@@ -68,6 +73,11 @@ public class FixableObjectCurve : Cleanable
             fixing = false;
             StartCoroutine(timerCor);
         }
+
+        if(other.TryGetComponent<PlayerHealth>(out PlayerHealth hp))
+        {
+            hp.lastCurve = null;
+        }
     }
 
 
@@ -78,6 +88,7 @@ public class FixableObjectCurve : Cleanable
             yield return null;
             IncreaseTimer();
         }
+        timerCor = null;
     }
 
     private IEnumerator DoTimerDecrease()
@@ -87,6 +98,7 @@ public class FixableObjectCurve : Cleanable
             yield return null;
             DecreaseTimer();
         }
+        timerCor = null;
     }
 
 
@@ -112,7 +124,7 @@ public class FixableObjectCurve : Cleanable
         {
             Color color = spriteFixed.color;
             timer -= Time.deltaTime;
-
+            timer = Mathf.Max(timer, 0f);
             color.a = tranCurve.Evaluate(timer /transitionLength);
             spriteFixed.color = color;
         }
@@ -140,6 +152,11 @@ public class FixableObjectCurve : Cleanable
 
         collider2D.enabled = true;
         IsClean = false;
+    }
+
+    public void SetFixing(bool set)
+    {
+        fixing = set;
     }
 
 }
