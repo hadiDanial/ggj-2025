@@ -7,7 +7,6 @@ public class Controller : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _force = 1f;
-
     [SerializeField] private float _topSpeed = 10f;
 
     // Start is called before the first frame update
