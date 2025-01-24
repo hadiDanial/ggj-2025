@@ -6,10 +6,13 @@ using UnityEngine.Events;
 
 public class FixableObjectCurve : Cleanable
 {
+<<<<<<< Updated upstream
 
     [SerializeField]
     public UnityEvent onFixEvent;
 
+=======
+>>>>>>> Stashed changes
     [SerializeField]
     private float transitionLength = 1f;
     
