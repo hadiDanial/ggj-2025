@@ -23,6 +23,7 @@ public class SpriteImporter : AssetPostprocessor
         {
             textureImporter.textureType = TextureImporterType.Sprite;
             textureImporter.filterMode = FilterMode.Point;
+            textureImporter.spritePixelsPerUnit = 512;
         }
         AssetDatabase.WriteImportSettingsIfDirty(assetPath);
     }
