@@ -39,11 +39,9 @@ public class FixableObjectCurve : Cleanable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Enter");
         if(IsClean) return;
         if(other.TryGetComponent<Controller2D>(out Controller2D controller))
         {
-            Debug.Log("Enter 2");
             if(timerCor != null)
             {
                 StopCoroutine(timerCor);

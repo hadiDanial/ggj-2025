@@ -156,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 806668649
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 61605171463887f4f8659c4431915a6f, type: 3}
   m_Color: {r: 0.59288985, g: 0.9716981, b: 0.53626734, a: 1}
   m_FlipX: 0
@@ -177,8 +177,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 791709863827796817}
-  - component: {fileID: 2211039858785755541}
   - component: {fileID: 2300294059413191845}
+  - component: {fileID: 4818834421899438130}
   m_Layer: 0
   m_Name: FixableObjectTransition
   m_TagString: Untagged
@@ -203,25 +203,6 @@ Transform:
   - {fileID: 8995272296247133482}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2211039858785755541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8536811637451307691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4853bc63079b2394fb74653b1ea3849a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brokenObject: {fileID: 6731113991651197303}
-  fixedObject: {fileID: 6367596767665023726}
-  fadeOutDuration: 1.5
-  intervalDuration: 0.2
-  fadeInDuration: 0.5
-  fadeOutEase: 17
-  fadeInEase: 19
 --- !u!61 &2300294059413191845
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -267,3 +248,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4818834421899438130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536811637451307691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12596e9791559428ca4b485f6b90f73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionLength: 1
+  spriteBroken: {fileID: 0}
+  spriteFixed: {fileID: 6367596767665023726}
+  tranCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
