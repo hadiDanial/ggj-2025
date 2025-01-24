@@ -22,7 +22,8 @@ public class SpriteImporter : AssetPostprocessor
             !assetPath.Contains("LUT") && !assetPath.Contains("Lut") && !assetPath.EndsWith(".exr")) //This is for LUT textures used in Color Correction (Post Processing effect)
         {
             textureImporter.textureType = TextureImporterType.Sprite;
-            textureImporter.filterMode = FilterMode.Point;
+            textureImporter.filterMode = FilterMode.Bilinear;
+            //textureImporter.spritePixelsPerUnit = 512;
         }
         AssetDatabase.WriteImportSettingsIfDirty(assetPath);
     }
