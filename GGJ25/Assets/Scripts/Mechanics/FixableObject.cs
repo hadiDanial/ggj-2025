@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +15,12 @@ public class FixableObject : Cleanable
     [SerializeField] private Ease fadeInEase = Ease.InOutExpo;
 
     private Sequence sequence;
+
+    private void Awake()
+    {
+        brokenObject.color = new Color(1, 1, 1, 1);
+        fixedObject.color = new Color(1, 1, 1, 0);
+    }
 
     [ContextMenu("Clean")]
     public override void Clean()

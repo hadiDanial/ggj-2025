@@ -14,7 +14,7 @@ public class Background : Cleanable
     private Tween scaleTween;
 
     private bool isClean;
-    private float debugSphereSize => maskScale * 0.5f;
+    private float DebugSphereSize => maskScale * 0.5f;
 
     private void Awake()
     {
@@ -55,7 +55,7 @@ public class Background : Cleanable
     {
         if (mask == null) return;
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(mask.position, debugSphereSize);    
+        Gizmos.DrawWireSphere(mask.position, DebugSphereSize);    
     }
     
 }

@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Broken Objects
+    uniqueID: 1496900369
+    locked: 0
+  - name: Fixed Objects
+    uniqueID: 806668649
+    locked: 0
