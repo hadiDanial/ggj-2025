@@ -17,15 +17,15 @@ public class OstManager : MonoBehaviour
     [SerializeField] float rainMinVolDis = 20f;
     [SerializeField] float maxRainVol = 0.6f;
     
-    private AudioSource[] sources = new AudioSource[4];
+    private AudioSource[] sources = new AudioSource[5];
 
     public enum OSTS{
         sad,
         happy,
-        rain,
         heal,
+        rain,
     }
-    private float[] volumesDest = {0f,0f,1f};
+    private float[] volumesDest = new float[4];
     private float rainMult = 1f;
 
 
@@ -36,17 +36,27 @@ public class OstManager : MonoBehaviour
         sources[(int)OSTS.sad] = ostSad;
         sources[(int)OSTS.heal] = ostHeal;
         sources[(int)OSTS.rain] = ostRain;
+        Debug.Log((int)OSTS.heal);
+        volumesDest[(int)OSTS.happy] = 0f;
+        volumesDest[(int)OSTS.sad] = 1f;
+        volumesDest[(int)OSTS.heal] = 0f;
+        volumesDest[(int)OSTS.rain] = 0f;
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {  
-        for(int i=0; i < sources.Length; i++){
-            if(i != (int)OSTS.rain)
-                sources[i].volume = approach(sources[i].volume, volumesDest[i]*(1-rainMult), switchSpd);
-        }
-            sources[(int)OSTS.rain].volume = approach(sources[(int)OSTS.rain].volume, volumesDest[(int)OSTS.rain], switchSpd);
-        // Debug.Log(sources[0].volume + ", " + sources[1].volume + ", " + sources[2].volume + ", rainmult: " + rainMult);
+        // for(int i=0; i < sources.Length; i++){
+        //     if(i != (int)OSTS.rain)
+        //         sources[i].volume = approach(sources[i].volume, volumesDest[i]*(1-rainMult), switchSpd);
+        // }
+        sources[(int)OSTS.happy].volume = approach(sources[(int)OSTS.happy].volume, volumesDest[(int)OSTS.happy]*(1-rainMult), switchSpd);
+        sources[(int)OSTS.sad].volume   = approach(sources[(int)OSTS.sad].volume, volumesDest[(int)OSTS.sad]*(1-rainMult), switchSpd);
+        sources[(int)OSTS.heal].volume  = approach(sources[(int)OSTS.heal].volume, volumesDest[(int)OSTS.heal]*(1-rainMult), switchSpd);
+
+        sources[(int)OSTS.rain].volume = approach(sources[(int)OSTS.rain].volume, volumesDest[(int)OSTS.rain], switchSpd);
+        Debug.Log(sources[0].volume + ", " + sources[1].volume + ", " + sources[2].volume + ", " + sources[3].volume + ", rainmult: " + rainMult);
     }
     
     //public methods
