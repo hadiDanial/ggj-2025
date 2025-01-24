@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FixableObjectCurve : Cleanable
 {
 
-
+    [SerializeField]
+    public UnityEvent onFixEvent;
 
     [SerializeField]
     private float transitionLength = 1f;
@@ -97,6 +99,7 @@ public class FixableObjectCurve : Cleanable
             if(timer >= transitionLength)
             {
                 IsClean = true;
+                onFixEvent.Invoke();
             }
             color.a = tranCurve.Evaluate(timer /transitionLength);
             spriteFixed.color = color;
@@ -125,6 +128,7 @@ public class FixableObjectCurve : Cleanable
         spriteFixed.color = color;
         collider2D.enabled = false;
         IsClean = true;
+        onFixEvent.Invoke();
     }
 
     [ContextMenu("Reset Clean")]
