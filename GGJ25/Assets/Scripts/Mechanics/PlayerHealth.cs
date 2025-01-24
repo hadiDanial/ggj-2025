@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.MPE;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem system;
+    [SerializeField] private Light2D playerLight;
+    [SerializeField] private float lightRadiusMultiplier = 2f;
+    [SerializeField] private float lightRadiusSpeed = 5f;
 
     private float maxEmission;
 
@@ -24,6 +28,12 @@ public class PlayerHealth : MonoBehaviour
     public float healLength = 1f;
 
     public FixableObjectCurve lastCurve;
+    private float initialRadius;
+
+    private void Awake()
+    {
+        initialRadius = playerLight.pointLightOuterRadius;
+    }
 
     void Start()
     {
@@ -47,6 +57,8 @@ public class PlayerHealth : MonoBehaviour
                 Death();
             }
         }
+
+        playerLight.pointLightOuterRadius = Mathf.Sin(Time.time * lightRadiusSpeed) * lightRadiusMultiplier + initialRadius;
     }
 
     private void Death()
