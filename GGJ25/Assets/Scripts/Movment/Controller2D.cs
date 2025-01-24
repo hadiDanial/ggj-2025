@@ -10,7 +10,11 @@ public class Controller2D : MonoBehaviour
 
     [SerializeField] private float _topSpeed = 10f;
 
+    [SerializeField] private float floatDownForce = 0.1f;
+
     private Rigidbody2D rb2d;
+
+    private bool playerMove; 
 
     void Start()
     {
@@ -20,6 +24,9 @@ public class Controller2D : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        playerMove = false;
+
         if (Input.GetKey(keyUp))
         {
             CheckAddForce(Vector3.up * (_force));
@@ -32,15 +39,18 @@ public class Controller2D : MonoBehaviour
 
         if (Input.GetKey(keyDown))
         {
-            CheckAddForce(Vector3.up * (_force * -1f));
+            CheckAddForce(Vector3.down * (_force));
         }
 
         if (Input.GetKey(keyLeft))
         {
-            CheckAddForce(Vector3.right * (_force * -1f));
+            CheckAddForce(Vector3.left * (_force));
         }
     
-
+        if(!playerMove)
+        {
+            CheckAddForce(Vector3.down * (floatDownForce));
+        }
  
     }
 
@@ -49,8 +59,10 @@ public class Controller2D : MonoBehaviour
     {
         if (Mathf.Abs(rb2d.velocity.magnitude) < _topSpeed)
         {
-            rb2d.AddForce(vec);
+            rb2d.AddForce(vec, ForceMode2D.Force);
         }
+
+        //playerMove = true;
     }
 
 }
