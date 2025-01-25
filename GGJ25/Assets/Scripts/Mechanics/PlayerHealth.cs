@@ -128,4 +128,14 @@ public class PlayerHealth : MonoBehaviour
         color.a = 1f-(lifeTimer/lifeLength);
         playerSpriteDisappear.color = color;
     }
+
+    //sounds
+    public void sfxPop()
+    {
+        sfxManager.PlaySound(SfxManager.SFX.death);
+    }
+    public void sfxRespawn()
+    {
+        sfxManager.PlaySound(SfxManager.SFX.respawn);
+    }
 }
