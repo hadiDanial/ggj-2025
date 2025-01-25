@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 223075689}
   m_Layer: 0
   m_Name: shelf_03
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,7 +1087,7 @@ GameObject:
   - component: {fileID: 351571871}
   m_Layer: 0
   m_Name: shelf_01
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1375,7 +1375,7 @@ Transform:
   m_GameObject: {fileID: 394090516}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.9170649, w: -0.39873806}
-  m_LocalPosition: {x: -2.341, y: 5.026, z: 0}
+  m_LocalPosition: {x: -2.3416, y: 5.0506, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2220,7 +2220,7 @@ GameObject:
   - component: {fileID: 646247119}
   m_Layer: 0
   m_Name: shelf_05
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2638,7 +2638,7 @@ GameObject:
   - component: {fileID: 658877202}
   m_Layer: 0
   m_Name: nightstand_02
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2960,7 +2960,7 @@ GameObject:
   - component: {fileID: 1014280708}
   m_Layer: 0
   m_Name: rooms_together_V02 copy
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -3750,7 +3750,7 @@ GameObject:
   - component: {fileID: 1200342441}
   m_Layer: 0
   m_Name: shelf_04
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4423,7 +4423,7 @@ GameObject:
   - component: {fileID: 1290907191}
   m_Layer: 0
   m_Name: shelf_01 (1)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4625,7 +4625,7 @@ GameObject:
   - component: {fileID: 1424319411}
   m_Layer: 0
   m_Name: sofa
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5677,7 +5677,7 @@ GameObject:
   - component: {fileID: 1917638783}
   m_Layer: 0
   m_Name: shelf_03 (1)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6095,7 +6095,7 @@ GameObject:
   - component: {fileID: 1940976549}
   m_Layer: 0
   m_Name: shelf_02
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6225,7 +6225,7 @@ GameObject:
   - component: {fileID: 1958148117}
   m_Layer: 0
   m_Name: old_nightstand
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
