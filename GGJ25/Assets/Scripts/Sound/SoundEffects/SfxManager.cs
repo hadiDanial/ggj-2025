@@ -52,16 +52,16 @@ public class SfxManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(isWoodActive){
-            woodCD -= Time.deltaTime;
-            if(woodCD <= 0){
-                System.Random r = new System.Random();
-                woodCD = r.Next((int)woodCdMin,(int)woodCdMax);
-                woodSource.clip = getRandomClip(SFX.wood);
-                woodSource.Play();
-                // woodSfx.panStereo   
-            }
-        }
+        // if(isWoodActive){
+        //     woodCD -= Time.deltaTime;
+        //     if(woodCD <= 0){
+        //         System.Random r = new System.Random();
+        //         woodCD = r.Next((int)woodCdMin,(int)woodCdMax);
+        //         woodSource.clip = getRandomClip(SFX.wood);
+        //         woodSource.Play();
+        //         // woodSfx.panStereo   
+        //     }
+        // }
     }
 
     public void PlaySound(SFX index, bool loop=false){
@@ -83,6 +83,7 @@ public class SfxManager : MonoBehaviour
     }
 
     public AudioClip getRandomClip(SFX index){
+        Debug.Log(index);
         System.Random r = new System.Random();
         return clips[(int)index][r.Next(clips[(int)index].Length)];
     }

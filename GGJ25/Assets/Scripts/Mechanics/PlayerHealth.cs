@@ -8,12 +8,11 @@ public class PlayerHealth : MonoBehaviour
 {
     public float lifeLength = 12f;
 
-    private float lifeTimer = 0f; 
+    public float lifeTimer = 0f; 
 
     public bool inSafeZone = false;
 
-    // [SerializeField]
-    private ParticleSystem system;
+    [SerializeField] private ParticleSystem system;
     [SerializeField] private Light2D playerLight;
     [SerializeField] private float lightRadiusMultiplier = 2f;
     [SerializeField] private float lightRadiusSpeed = 5f;
@@ -47,8 +46,15 @@ public class PlayerHealth : MonoBehaviour
     {
         if(inSafeZone)
         {
+            //ost
             ostManager.SetOst(OstManager.OSTS.happy);
+            ostManager.SetHealing(lifeTimer > 0);
+
+            //refill hp
             lifeTimer = Mathf.Clamp(lifeTimer - Time.deltaTime * lifeTimer / healLength, 0f, lifeLength);
+            if(lifeTimer < 0.1f) lifeTimer = 0f;
+
+        
             UpdateParticles();
         }
         else

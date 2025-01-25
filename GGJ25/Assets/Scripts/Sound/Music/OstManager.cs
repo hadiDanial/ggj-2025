@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class OstManager : MonoBehaviour
@@ -27,7 +28,7 @@ public class OstManager : MonoBehaviour
         rain,
     }
     private float[] volumesDest = new float[4];
-    private float rainMult = 1f;
+    private float rainMult = 0f;
 
 
     // Start is called before the first frame update
@@ -37,7 +38,6 @@ public class OstManager : MonoBehaviour
         sources[(int)OSTS.sad] = ostSad;
         sources[(int)OSTS.heal] = ostHeal;
         sources[(int)OSTS.rain] = ostRain;
-        Debug.Log((int)OSTS.heal);
         volumesDest[(int)OSTS.happy] = 0f;
         volumesDest[(int)OSTS.sad] = 1f;
         volumesDest[(int)OSTS.heal] = 0f;
@@ -48,16 +48,13 @@ public class OstManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {  
-        // for(int i=0; i < sources.Length; i++){
-        //     if(i != (int)OSTS.rain)
-        //         sources[i].volume = approach(sources[i].volume, volumesDest[i]*(1-rainMult), switchSpd);
-        // }
         sources[(int)OSTS.happy].volume = approach(sources[(int)OSTS.happy].volume, volumesDest[(int)OSTS.happy]*(1-rainMult), switchSpd);
         sources[(int)OSTS.sad].volume   = approach(sources[(int)OSTS.sad].volume, volumesDest[(int)OSTS.sad]*(1-rainMult), switchSpd);
         sources[(int)OSTS.heal].volume  = approach(sources[(int)OSTS.heal].volume, volumesDest[(int)OSTS.heal]*(1-rainMult), switchSpd);
 
         sources[(int)OSTS.rain].volume = approach(sources[(int)OSTS.rain].volume, volumesDest[(int)OSTS.rain], switchSpd);
-        // Debug.Log(sources[0].volume + ", " + sources[1].volume + ", " + sources[2].volume + ", " + sources[3].volume + ", rainmult: " + rainMult);
+        String values = "";
+        for(int i=0;i < volumesDest.Length; i++){values += volumesDest[i] + ": " + sources[i].volume + ", ";}
     }
     
     //public methods
