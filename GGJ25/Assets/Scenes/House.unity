@@ -5447,6 +5447,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1750373543888139289, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
+      propertyPath: _force
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750373543888139289, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
+      propertyPath: _topSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750373543888139289, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: ostManager
       value: 
       objectReference: {fileID: 1012048969}
@@ -5454,6 +5462,14 @@ PrefabInstance:
       propertyPath: sfxManager
       value: 
       objectReference: {fileID: 1649308981}
+    - target: {fileID: 1750373543888139289, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
+      propertyPath: floatDownForce
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750373543888139289, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
+      propertyPath: collideSfxMinMagnitude
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4520162914023394699, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: ostManager
       value: 
