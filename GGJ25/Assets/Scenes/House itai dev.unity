@@ -2693,6 +2693,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3303662688940829051, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
+      propertyPath: Pan2D
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3513769015033803182, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 565.22015
@@ -2736,6 +2740,14 @@ PrefabInstance:
     - target: {fileID: 6984700672719367202, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
       propertyPath: m_Name
       value: SfxManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116512942644609142, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
+      propertyPath: woodCdMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116512942644609142, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
+      propertyPath: woodCdMin
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
