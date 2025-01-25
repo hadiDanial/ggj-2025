@@ -5597,7 +5597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4520162914023394699, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: lifeLength
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4520162914023394699, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: ostManager
