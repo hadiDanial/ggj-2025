@@ -37,6 +37,8 @@ public class PlayerHealth : MonoBehaviour
     public FixableObjectCurve lastCurve;
     private float initialRadius;
 
+    public AnimationCurve animFadeCurve;
+
     private void Awake()
     {
         initialRadius = playerLight.pointLightOuterRadius;
@@ -76,6 +78,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 animator.SetBool("dead",true);
                 state = PLAYER_HP_STATES.pop;
+                StartDisappear();
             }
         }
 
@@ -85,6 +88,27 @@ public class PlayerHealth : MonoBehaviour
     private void Death()
     {
         //moved to respawn.
+    }
+
+    private void StartDisappear()
+    {
+        StartCoroutine(DoDisappearDeath());
+    }
+    
+    private IEnumerator DoDisappearDeath()
+    {
+        float timer = 0f;
+        float disappearDeathLength = 5f/6f;
+
+        while(timer < disappearDeathLength)
+        {
+            timer+=Time.deltaTime;
+
+            var color = playerSpriteDisappear.color;
+            color.a = 1f- animFadeCurve.Evaluate(timer/disappearDeathLength);
+            playerSpriteDisappear.color = color;
+            yield return null;
+        }
     }
 
     private void Respawn()
