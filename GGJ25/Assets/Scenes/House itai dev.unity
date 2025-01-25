@@ -1899,18 +1899,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6437356596629165149, guid: 8cd72994a98ea4b4badb3ef402964d9e, type: 3}
-      propertyPath: maxRainVol
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437356596629165149, guid: 8cd72994a98ea4b4badb3ef402964d9e, type: 3}
-      propertyPath: rainMaxVolDis
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437356596629165149, guid: 8cd72994a98ea4b4badb3ef402964d9e, type: 3}
-      propertyPath: rainMinVolDis
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7363094200972377806, guid: 8cd72994a98ea4b4badb3ef402964d9e, type: 3}
       propertyPath: m_Name
       value: OstManager
@@ -1936,6 +1924,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7414447954290510823, guid: ff2e92161b0426a4ba8442f400eca0eb, type: 3}
   m_PrefabInstance: {fileID: 313946182384841803}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &860077445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1157316024783263116, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
+  m_PrefabInstance: {fileID: 1687051980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &882967012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1948,18 +1941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Aquarium '
       objectReference: {fileID: 0}
-    - target: {fileID: 7459278379660201604, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5611364
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459278379660201604, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5611364
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459278379660201604, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5611364
-      objectReference: {fileID: 0}
+    - target: {fileID: 3433970146081281511, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1044759912}
     - target: {fileID: 7459278379660201604, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.32
@@ -1999,22 +1984,6 @@ PrefabInstance:
     - target: {fileID: 7459278379660201604, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8256312549180866928, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
-      propertyPath: m_Size.x
-      value: 1.8387709
-      objectReference: {fileID: 0}
-    - target: {fileID: 8256312549180866928, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
-      propertyPath: m_Size.y
-      value: 0.9880047
-      objectReference: {fileID: 0}
-    - target: {fileID: 8256312549180866928, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.009121299
-      objectReference: {fileID: 0}
-    - target: {fileID: 8256312549180866928, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.054644585
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2698,10 +2667,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3303662688940829051, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
-      propertyPath: Pan2D
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3513769015033803182, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 565.22015
@@ -2747,13 +2712,9 @@ PrefabInstance:
       value: SfxManager
       objectReference: {fileID: 0}
     - target: {fileID: 9116512942644609142, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
-      propertyPath: woodCdMax
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116512942644609142, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
-      propertyPath: woodCdMin
-      value: 5
-      objectReference: {fileID: 0}
+      propertyPath: fixClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 22173e7c21a3cff42ac15b0f14bcb5a9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4208,6 +4169,38 @@ PrefabInstance:
     - target: {fileID: 1945767464724957054, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433970146081281511, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433970146081281511, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433970146081281511, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 860077445}
+    - target: {fileID: 3433970146081281511, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433970146081281511, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433970146081281511, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433970146081281511, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433970146081281511, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7459278379660201604, guid: 9aca75d61a660ec4598ddca4a7a30c3c, type: 3}
       propertyPath: m_LocalScale.x
@@ -6120,6 +6113,38 @@ PrefabInstance:
     - target: {fileID: 1864010166418343889, guid: 0ab0b73975360d74db388d1c6dd29d1d, type: 3}
       propertyPath: m_Name
       value: Clock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276759925322945864, guid: 0ab0b73975360d74db388d1c6dd29d1d, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276759925322945864, guid: 0ab0b73975360d74db388d1c6dd29d1d, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276759925322945864, guid: 0ab0b73975360d74db388d1c6dd29d1d, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1044759912}
+    - target: {fileID: 3276759925322945864, guid: 0ab0b73975360d74db388d1c6dd29d1d, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276759925322945864, guid: 0ab0b73975360d74db388d1c6dd29d1d, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: playFixSfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276759925322945864, guid: 0ab0b73975360d74db388d1c6dd29d1d, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SfxManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276759925322945864, guid: 0ab0b73975360d74db388d1c6dd29d1d, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276759925322945864, guid: 0ab0b73975360d74db388d1c6dd29d1d, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4142953839212407814, guid: 0ab0b73975360d74db388d1c6dd29d1d, type: 3}
       propertyPath: m_LocalScale.x

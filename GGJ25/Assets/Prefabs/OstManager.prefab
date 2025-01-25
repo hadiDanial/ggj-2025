@@ -309,9 +309,9 @@ MonoBehaviour:
   ostRain: {fileID: 571977654055791072}
   ostHeal: {fileID: 8985324921470016033}
   switchSpd: 0.02
-  rainMaxVolDis: 4
-  rainMinVolDis: 20
-  maxRainVol: 0.6
+  rainMaxVolDis: 2
+  rainMinVolDis: 10
+  maxRainVol: 1
   happyVolWhileHealing: 0.5
 --- !u!1 &7801982344935388575
 GameObject:

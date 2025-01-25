@@ -136,6 +136,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4818834421899438130, guid: 6e5617d3372c541099a905d720ff1c91, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818834421899438130, guid: 6e5617d3372c541099a905d720ff1c91, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818834421899438130, guid: 6e5617d3372c541099a905d720ff1c91, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818834421899438130, guid: 6e5617d3372c541099a905d720ff1c91, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: playFixSfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818834421899438130, guid: 6e5617d3372c541099a905d720ff1c91, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SfxManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818834421899438130, guid: 6e5617d3372c541099a905d720ff1c91, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818834421899438130, guid: 6e5617d3372c541099a905d720ff1c91, type: 3}
+      propertyPath: onFixEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6257797018240487804, guid: 6e5617d3372c541099a905d720ff1c91, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
