@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Controller2D : MonoBehaviour
 {
     public KeyCode keyUp, keyRight, keyDown, keyLeft;
+
 
     [SerializeField] private float _force = 1f;
 
@@ -13,6 +15,7 @@ public class Controller2D : MonoBehaviour
     [SerializeField] private float floatDownForce = 0.1f;
     [SerializeField] private OstManager ostManager;
     [SerializeField] private SfxManager sfxManager;
+    [SerializeField] private float collideSfxMinMagnitude = 0.5f;
 
     private Rigidbody2D rb2d;
 
@@ -25,8 +28,7 @@ public class Controller2D : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {
-
+    {   
         playerMove = false;
 
         if (Input.GetKey(keyUp))
@@ -69,6 +71,12 @@ public class Controller2D : MonoBehaviour
         }
 
         //playerMove = true;
+    }
+
+    //collision sfx
+    private void OnCollisionEnter2D(Collision2D collider){
+        if(collider.transform.tag == "wall" && rb2d.velocity.magnitude >= collideSfxMinMagnitude) 
+            sfxManager.PlaySound(SfxManager.SFX.collide);
     }
 
     //sorry :3
