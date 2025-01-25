@@ -607,10 +607,10 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1
-    functionName: 
+  - time: 1.1833333
+    functionName: PlaySfx
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 8300000, guid: 96fc95b2c03966543ba87986d457ba92, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
