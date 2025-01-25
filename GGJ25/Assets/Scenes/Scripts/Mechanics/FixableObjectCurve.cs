@@ -28,12 +28,17 @@ public class FixableObjectCurve : Cleanable
     [SerializeField] private AnimationCurve tranCurve;
     [SerializeField] private Light2D fixedLight, brokenLight;
     private float targetLightIntensity, initialBrokenLightIntensity;
+
+    [SerializeField] private ParticleSystem fixingParticles;
     
 
     void Start()
     {
         targetLightIntensity = fixedLight.intensity;
         initialBrokenLightIntensity = brokenLight.intensity;
+        fixingParticles.Stop();
+        var main = fixingParticles.main;
+        main.duration = transitionLength;
         fixedLight.intensity = 0;
         collider2D = GetComponent<Collider2D>();
         if (collider2D == null)
@@ -87,6 +92,7 @@ public class FixableObjectCurve : Cleanable
 
     private IEnumerator DoTimerIncrease()
     {
+        fixingParticles.Play();
         while(fixing)
         {
             yield return null;
@@ -97,6 +103,7 @@ public class FixableObjectCurve : Cleanable
 
     private IEnumerator DoTimerDecrease()
     {
+        fixingParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         while(!fixing)
         {
             yield return null;
@@ -139,6 +146,7 @@ public class FixableObjectCurve : Cleanable
             spriteFixed.color = color;
             brokenLight.intensity = Mathf.Lerp(initialBrokenLightIntensity, 0, t);
             fixedLight.intensity = Mathf.Lerp(0, targetLightIntensity, t);
+            fixingParticles.time = fixingParticles.main.duration * t;
         }
     }
 
