@@ -12,6 +12,7 @@ public class SfxManager : MonoBehaviour
     [SerializeField] AudioSource windSource;
     [SerializeField] AudioSource woodSource; 
     [SerializeField] AudioSource fixSource; 
+    [SerializeField] AudioSource extraSource; 
     
     [Header ("Clips")]
     [SerializeField] AudioClip[] deathClips = new AudioClip[1];
@@ -90,6 +91,10 @@ public class SfxManager : MonoBehaviour
         isWoodActive = isActive;
     }
 
+    public void playFixSfx(){
+        PlaySound(SFX.fix);
+    }
+
     public AudioClip getRandomClip(SFX index){
         
         System.Random r = new System.Random();
@@ -97,6 +102,12 @@ public class SfxManager : MonoBehaviour
         int choice = r.Next(options.Length);
 
         return options[choice];
+    }
+
+    public void PlayClip(AudioClip clip, float vol=1){
+        extraSource.clip = clip;
+        extraSource.volume = vol;
+        extraSource.Play();
     }
 
 }
