@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering.Universal;
 
 public class FixableObjectCurve : Cleanable
 {
@@ -24,13 +25,16 @@ public class FixableObjectCurve : Cleanable
 
     private Collider2D collider2D;
 
-    [SerializeField]
-    private AnimationCurve tranCurve;
-
+    [SerializeField] private AnimationCurve tranCurve;
+    [SerializeField] private Light2D fixedLight, brokenLight;
+    private float targetLightIntensity, initialBrokenLightIntensity;
     
 
     void Start()
     {
+        targetLightIntensity = fixedLight.intensity;
+        initialBrokenLightIntensity = brokenLight.intensity;
+        fixedLight.intensity = 0;
         collider2D = GetComponent<Collider2D>();
         if (collider2D == null)
         {
@@ -112,9 +116,14 @@ public class FixableObjectCurve : Cleanable
             {
                 IsClean = true;
                 onFixEvent.Invoke();
+                spriteBroken.color = spriteBroken.color.WithAlpha(0);
             }
-            color.a = tranCurve.Evaluate(timer /transitionLength);
+
+            float t = timer / transitionLength;
+            color.a = tranCurve.Evaluate(t);
             spriteFixed.color = color;
+            brokenLight.intensity = Mathf.Lerp(initialBrokenLightIntensity, 0, t);
+            fixedLight.intensity = Mathf.Lerp(0, targetLightIntensity, t);
         }
     }
 
@@ -125,8 +134,11 @@ public class FixableObjectCurve : Cleanable
             Color color = spriteFixed.color;
             timer -= Time.deltaTime;
             timer = Mathf.Max(timer, 0f);
-            color.a = tranCurve.Evaluate(timer /transitionLength);
+            float t = timer / transitionLength;
+            color.a = tranCurve.Evaluate(t);
             spriteFixed.color = color;
+            brokenLight.intensity = Mathf.Lerp(initialBrokenLightIntensity, 0, t);
+            fixedLight.intensity = Mathf.Lerp(0, targetLightIntensity, t);
         }
     }
 
@@ -152,6 +164,8 @@ public class FixableObjectCurve : Cleanable
 
         collider2D.enabled = true;
         IsClean = false;
+        brokenLight.intensity = initialBrokenLightIntensity;
+        fixedLight.intensity = 0;
     }
 
     public void SetFixing(bool set)
