@@ -90,6 +90,10 @@ public class SfxManager : MonoBehaviour
         isWoodActive = isActive;
     }
 
+    public void playFixSfx(){
+        PlaySound(SFX.fix);
+    }
+
     public AudioClip getRandomClip(SFX index){
         
         System.Random r = new System.Random();
