@@ -5252,12 +5252,12 @@ MonoBehaviour:
   keyRight: 100
   keyDown: 115
   keyLeft: 97
-  _force: 20
-  _topSpeed: 1
-  floatDownForce: 0.2
+  _force: 15
+  _topSpeed: 4
+  floatDownForce: 0.5
   ostManager: {fileID: 0}
   sfxManager: {fileID: 0}
-  collideSfxMinMagnitude: 0.5
+  collideSfxMinMagnitude: 2
 --- !u!114 &4520162914023394699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5270,7 +5270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdc786bd600c489c99c16c853367324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeLength: 15
+  lifeLength: 11
   lifeTimer: 0
   inSafeZone: 0
   system: {fileID: 8098009643680202155}
@@ -10208,9 +10208,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1569327451
+  m_SortingLayer: 3
+  m_SortingOrder: -20
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

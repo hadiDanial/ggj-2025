@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SafezoneCollider : MonoBehaviour
 {
-
+    public Transform overrideSpawn;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,6 +13,10 @@ public class SafezoneCollider : MonoBehaviour
         {
             hp.inSafeZone = true;
             hp.lastSafeZone = transform;
+            if(overrideSpawn != null)
+            {
+                hp.lastSafeZone = overrideSpawn;
+            }
         }
     }
 
@@ -22,6 +26,10 @@ public class SafezoneCollider : MonoBehaviour
         {
             hp.inSafeZone = false;
             hp.lastSafeZone = transform;
+                        if(overrideSpawn != null)
+            {
+                hp.lastSafeZone = overrideSpawn;
+            }
         }
     }
 }

@@ -31,7 +31,6 @@ public class FixableObjectCurve : Cleanable
 
     [SerializeField] private ParticleSystem fixingParticles;
     
-
     void Start()
     {
         targetLightIntensity = fixedLight.intensity;
