@@ -38,8 +38,8 @@ public class OstManager : MonoBehaviour
         sources[(int)OSTS.sad] = ostSad;
         sources[(int)OSTS.heal] = ostHeal;
         sources[(int)OSTS.rain] = ostRain;
-        volumesDest[(int)OSTS.happy] = 0f;
-        volumesDest[(int)OSTS.sad] = 1f;
+        volumesDest[(int)OSTS.happy] = 1f;
+        volumesDest[(int)OSTS.sad] = 0f;
         volumesDest[(int)OSTS.heal] = 0f;
         volumesDest[(int)OSTS.rain] = 0f;
     }
@@ -71,10 +71,10 @@ public class OstManager : MonoBehaviour
 
     public void updateDistanceToWindow(float distance){
         rainMult = -1f*(distance-10f)/(10f-2f);
-        // Debug.Log("dis: " + distance + ", " + rainMaxVolDis + "," + rainMinVolDis + ", mult: " + rainMult);
-        rainMult = Math.Clamp(rainMult,0,maxRainVol);
+        Debug.Log("dis: " + distance + ", " + rainMaxVolDis + "," + rainMinVolDis + ", mult: " + rainMult);
+        rainMult = Math.Clamp(rainMult,0.1f,maxRainVol);
         volumesDest[(int)OSTS.rain] = rainMult;
-        // Debug.Log("2: dis: " + distance + ", mult: " + rainMult);
+        Debug.Log("2: dis: " + distance + ", mult: " + rainMult);
     }
 
     //private methods
