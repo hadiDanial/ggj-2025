@@ -6,11 +6,11 @@ public class Controller2D : MonoBehaviour
 {
     public KeyCode keyUp, keyRight, keyDown, keyLeft;
 
-    [SerializeField] private float _force = 1f;
+    [SerializeField] private float _force = 20f;
 
-    [SerializeField] private float _topSpeed = 10f;
+    [SerializeField] private float _topSpeed = 1f;
 
-    [SerializeField] private float floatDownForce = 0.1f;
+    [SerializeField] private float floatDownForce = 0.2f;
 
     private Rigidbody2D rb2d;
 
