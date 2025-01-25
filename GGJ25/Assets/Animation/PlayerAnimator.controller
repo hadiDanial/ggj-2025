@@ -14,9 +14,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0.053071253
-  m_ExitTime: 0.9933469
+  m_TransitionDuration: 0.9321947
+  m_TransitionOffset: 2.8427413
+  m_ExitTime: 0.7085049
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -36,9 +36,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.021459186
-  m_TransitionOffset: 0
-  m_ExitTime: 0.9655447
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0.00876537
+  m_ExitTime: 0.990294
   m_HasExitTime: 1
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
@@ -162,7 +162,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 6266041992383442736}
-    m_Position: {x: 250, y: 40, z: 0}
+    m_Position: {x: 250, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4932725947496192579}
     m_Position: {x: 260, y: -70, z: 0}
