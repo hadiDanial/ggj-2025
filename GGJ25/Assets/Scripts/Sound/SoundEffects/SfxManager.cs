@@ -40,28 +40,36 @@ public class SfxManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        //this garbade code is so we will have pretty array names in the inspector :3
         sources[(int)SFX.collide]   = collideSource;
         sources[(int)SFX.death]     = deathSource;
         sources[(int)SFX.respawn]   = respawnSource;
         sources[(int)SFX.wind]      = windSource;
         sources[(int)SFX.wood]      = woodSource;
         sources[(int)SFX.fix]       = fixSource;
+
+        clips[(int)SFX.collide] = collideClips;
+        clips[(int)SFX.death]   = deathClips;
+        clips[(int)SFX.fix]     = fixClips;
+        clips[(int)SFX.respawn] = respawnClips;
+        clips[(int)SFX.wind]    = windClips;
+        clips[(int)SFX.wood]    = woodClips; 
     }
 
     void FixedUpdate()
     {
-        // if(isWoodActive){
-        //     woodCD -= Time.deltaTime;
-        //     if(woodCD <= 0){
-        //         System.Random r = new System.Random();
-        //         woodCD = r.Next((int)woodCdMin,(int)woodCdMax);
-        //         woodSource.clip = getRandomClip(SFX.wood);
-        //         woodSource.Play();
-        //         // woodSfx.panStereo   
-        //     }
-        // }
+        if(isWoodActive){
+            woodCD -= Time.deltaTime;
+            if(woodCD <= 0){
+                System.Random r = new System.Random();
+                woodCD = r.Next((int)woodCdMin,(int)woodCdMax);
+                woodSource.clip = getRandomClip(SFX.wood);
+                woodSource.Play();
+                woodSource.panStereo = (float)(2*r.NextDouble() - 1);
+            }
+        }
     }
 
     public void PlaySound(SFX index, bool loop=false){
@@ -83,9 +91,12 @@ public class SfxManager : MonoBehaviour
     }
 
     public AudioClip getRandomClip(SFX index){
-        Debug.Log(index);
+        
         System.Random r = new System.Random();
-        return clips[(int)index][r.Next(clips[(int)index].Length)];
+        AudioClip[] options = clips[(int)index];
+        int choice = r.Next(options.Length);
+
+        return options[choice];
     }
 
 }

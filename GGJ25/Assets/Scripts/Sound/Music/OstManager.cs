@@ -71,10 +71,10 @@ public class OstManager : MonoBehaviour
 
     public void updateDistanceToWindow(float distance){
         rainMult = -1f*(distance-10f)/(10f-2f);
-        Debug.Log("dis: " + distance + ", " + rainMaxVolDis + "," + rainMinVolDis + ", mult: " + rainMult);
+        // Debug.Log("dis: " + distance + ", " + rainMaxVolDis + "," + rainMinVolDis + ", mult: " + rainMult);
         rainMult = Math.Clamp(rainMult,0,maxRainVol);
         volumesDest[(int)OSTS.rain] = rainMult;
-        Debug.Log("2: dis: " + distance + ", mult: " + rainMult);
+        // Debug.Log("2: dis: " + distance + ", mult: " + rainMult);
     }
 
     //private methods

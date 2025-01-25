@@ -459,7 +459,7 @@ MonoBehaviour:
   - {fileID: 0}
   woodCdMin: 5
   woodCdMax: 40
-  woodCD: 0
+  woodCD: 4
 --- !u!1 &6991794960038517143
 GameObject:
   m_ObjectHideFlags: 0
