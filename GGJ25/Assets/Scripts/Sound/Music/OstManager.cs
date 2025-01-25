@@ -14,8 +14,8 @@ public class OstManager : MonoBehaviour
 
     [Header ("Sliders")]
     [SerializeField] float switchSpd = 0.02f;
-    [SerializeField] float rainMaxVolDis = 4;
-    [SerializeField] float rainMinVolDis = 20f;
+    [SerializeField] float rainMaxVolDis = 10f;
+    [SerializeField] float rainMinVolDis = 2f;
     [SerializeField] float maxRainVol = 0.6f;
     [SerializeField] float happyVolWhileHealing = 0.7f;
     
@@ -42,7 +42,6 @@ public class OstManager : MonoBehaviour
         volumesDest[(int)OSTS.sad] = 1f;
         volumesDest[(int)OSTS.heal] = 0f;
         volumesDest[(int)OSTS.rain] = 0f;
-
     }
 
     // Update is called once per frame
@@ -71,8 +70,11 @@ public class OstManager : MonoBehaviour
     public void SetSad(){SetOst(OSTS.sad);}
 
     public void updateDistanceToWindow(float distance){
-        rainMult = Math.Clamp(-(distance-rainMaxVolDis)/(rainMaxVolDis-rainMinVolDis),0,maxRainVol);
+        rainMult = -1f*(distance-10f)/(10f-2f);
+        Debug.Log("dis: " + distance + ", " + rainMaxVolDis + "," + rainMinVolDis + ", mult: " + rainMult);
+        rainMult = Math.Clamp(rainMult,0,maxRainVol);
         volumesDest[(int)OSTS.rain] = rainMult;
+        Debug.Log("2: dis: " + distance + ", mult: " + rainMult);
     }
 
     //private methods
@@ -81,6 +83,5 @@ public class OstManager : MonoBehaviour
         if(val > dest) return Math.Max(val-spd,dest);
         return Math.Min(val+spd,dest);
     }
-
 
 }

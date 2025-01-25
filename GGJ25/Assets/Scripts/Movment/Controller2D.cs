@@ -11,6 +11,8 @@ public class Controller2D : MonoBehaviour
     [SerializeField] private float _topSpeed = 10f;
 
     [SerializeField] private float floatDownForce = 0.1f;
+    [SerializeField] private OstManager ostManager;
+    [SerializeField] private SfxManager sfxManager;
 
     private Rigidbody2D rb2d;
 
@@ -51,6 +53,10 @@ public class Controller2D : MonoBehaviour
         {
             CheckAddForce(Vector3.down * (floatDownForce));
         }
+
+        //update rain ost
+        Transform nearestWindow = FindNearestObjectWithTag("Window").transform;
+        ostManager.updateDistanceToWindow(Vector3.Distance(transform.position,nearestWindow.position));
  
     }
 
@@ -63,6 +69,27 @@ public class Controller2D : MonoBehaviour
         }
 
         //playerMove = true;
+    }
+
+    //sorry :3
+    GameObject FindNearestObjectWithTag(string tag)
+    {
+        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag(tag);
+        GameObject nearestObject = null;
+        float minDistance = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+
+        foreach (GameObject obj in taggedObjects)
+        {
+            float distance = Vector3.Distance(obj.transform.position, currentPosition);
+            if (distance < minDistance)
+            {
+                nearestObject = obj;
+                minDistance = distance;
+            }
+        }
+
+        return nearestObject;
     }
 
 }

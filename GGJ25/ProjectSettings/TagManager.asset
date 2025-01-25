@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TriggerAreaLeft
   - TriggerAreaRight
+  - Window
   layers:
   - Default
   - TransparentFX
