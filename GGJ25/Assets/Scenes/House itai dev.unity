@@ -1479,7 +1479,7 @@ Transform:
   m_GameObject: {fileID: 420902484}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.1, y: -10.6, z: -10}
+  m_LocalPosition: {x: -29.31, y: -12.74, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1755,7 +1755,7 @@ Transform:
   m_GameObject: {fileID: 530030058}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.1, y: -10.6, z: -10}
+  m_LocalPosition: {x: -29.31, y: -12.74, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2025,6 +2025,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7459278379660201604, guid: 7efdb6279a41b0f42b208a1616d0ac32, type: 3}
   m_PrefabInstance: {fileID: 882967012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &984236720 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7735660004095020409, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
+  m_PrefabInstance: {fileID: 1890366459}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1014280696
 GameObject:
@@ -2743,11 +2748,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9116512942644609142, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
       propertyPath: woodCdMax
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 9116512942644609142, guid: 9b96ca83ce129d1469570b9d1f7a467d, type: 3}
       propertyPath: woodCdMin
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4291,6 +4296,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1750373543888139289, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
+      propertyPath: _topSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750373543888139289, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: ostManager
       value: 
       objectReference: {fileID: 658941134}
@@ -4299,8 +4308,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1044759912}
     - target: {fileID: 4520162914023394699, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 984236720}
+    - target: {fileID: 4520162914023394699, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: lifeLength
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4520162914023394699, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: ostManager
@@ -4310,17 +4323,21 @@ PrefabInstance:
       propertyPath: sfxManager
       value: 
       objectReference: {fileID: 1044759912}
+    - target: {fileID: 4520162914023394699, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
+      propertyPath: lastSafeZone
+      value: 
+      objectReference: {fileID: 489912532}
     - target: {fileID: 6019823401823260577, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter_Bubble
       objectReference: {fileID: 0}
     - target: {fileID: 8888379169018812328, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.1
+      value: -29.31
       objectReference: {fileID: 0}
     - target: {fileID: 8888379169018812328, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.6
+      value: -12.74
       objectReference: {fileID: 0}
     - target: {fileID: 8888379169018812328, guid: 490147051cf9e4bcc979bd77359d64dd, type: 3}
       propertyPath: m_LocalPosition.z

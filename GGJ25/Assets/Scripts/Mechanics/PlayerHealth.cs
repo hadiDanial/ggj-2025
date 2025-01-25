@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.MPE;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Rendering.Universal;
 
 public class PlayerHealth : MonoBehaviour
@@ -18,6 +19,13 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float lightRadiusSpeed = 5f;
 
     private float maxEmission;
+
+    enum PLAYER_HP_STATES{
+        natural,
+        pop,
+        respawn,
+    }
+    private PLAYER_HP_STATES state = PLAYER_HP_STATES.natural;
 
     //Set one of these on start
     public Transform lastSafeZone;
@@ -36,6 +44,8 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] OstManager ostManager;
     [SerializeField] SfxManager sfxManager;
+    [SerializeField] private Animator animator;
+
 
     void Start()
     {
@@ -48,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
         {
             //ost
             ostManager.SetOst(OstManager.OSTS.happy);
-            ostManager.SetHealing(lifeTimer > 0);
+            ostManager.SetHealing(lifeTimer > lifeLength);
 
             //refill hp
             lifeTimer = Mathf.Clamp(lifeTimer - Time.deltaTime * lifeTimer / healLength, 0f, lifeLength);
@@ -57,14 +67,15 @@ public class PlayerHealth : MonoBehaviour
         
             UpdateParticles();
         }
-        else
+        else //if(state == PLAYER_HP_STATES.natural)
         {
             ostManager.SetOst(OstManager.OSTS.sad);
             lifeTimer = Mathf.Clamp(lifeTimer + Time.deltaTime, 0f, lifeLength);
             UpdateParticles();
             if(lifeTimer >= lifeLength)
             {
-                Death();
+                animator.SetBool("dead",true);
+                state = PLAYER_HP_STATES.pop;
             }
         }
 
@@ -73,13 +84,35 @@ public class PlayerHealth : MonoBehaviour
 
     private void Death()
     {
-        //Pop animation? 
+        //moved to respawn.
+    }
+
+    private void Respawn()
+    {
         //Respawn
         transform.position = lastSafeZone.position;
+        lifeTimer = 0f;
 
         if(lastCurve != null)
         {
             lastCurve.OnTriggerExit2D(GetComponent<Collider2D>());
+        }
+    }
+
+    public void OnAnimationEnd(){
+        Debug.Log("animation ended during " + state);
+        switch(state){
+            case PLAYER_HP_STATES.natural: return; break;
+
+            case PLAYER_HP_STATES.pop: 
+                animator.SetBool("dead",false);
+                state = PLAYER_HP_STATES.respawn;
+                Respawn();
+            break;
+            case PLAYER_HP_STATES.respawn: 
+                // animator.SetBool("dead",false);
+                state = PLAYER_HP_STATES.natural;
+            break;
         }
     }
 
