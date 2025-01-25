@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
@@ -122,7 +120,9 @@ public class FixableObjectCurve : Cleanable
             {
                 IsClean = true;
                 onFixEvent.Invoke();
-                spriteBroken.color = spriteBroken.color.WithAlpha(0);
+                var color2 = spriteBroken.color;
+                color2.a = 0;
+                spriteBroken.color = color2;
             }
 
             float t = timer / transitionLength;
