@@ -9,6 +9,6 @@ You can play the game here: [Game link](https://hadidanial.itch.io/luma)
 
 The game was made by a team of talented individuals. The list of contributors can be found on the GGJ page:
 
-[Global Game Jam page](https://globalgamejam.org/games/2025/luma-5))
+[Global Game Jam page](https://globalgamejam.org/games/2025/luma-5)
 
  
